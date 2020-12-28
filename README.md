@@ -10,9 +10,9 @@ To get up and running with a development environment please see this [Modding Gu
 
 Please use the Steam Workshop. I currently have no plans of distributing releases via GitHub.
 
-## Projects
+# Projects
 
-# Free Energy Generator
+## Free Energy Generator
 
 This is just a little test for me to get into Harmony and ONI modding. It adds the generator available in debug mode while not needing to be in debug mode. 
 
