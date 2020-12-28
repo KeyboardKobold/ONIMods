@@ -11,16 +11,18 @@ namespace FreeEnergyGeneratorMod
         public class GeneratedBuildingPatch
         {
 
-            private static string name = UI.FormatAsLink("Generator", GeneratorModConfig.ID);
-            
-            private static string desc = "This building is a Generator";
+            private static string name =
+                Strings.Get($"STRINGS.BUILDINGS.PREFABS.{DevGeneratorConfig.ID.ToUpper()}.NAME");
 
-            private static string effect = "Generates " + UI.FormatAsLink("Power", "POWER");
+            private static string desc =
+                Strings.Get($"STRINGS.BUILDINGS.PREFABS.{DevGeneratorConfig.ID.ToUpper()}.DESC");
+
+            private static string effect = Strings.Get($"STRINGS.BUILDINGS.PREFABS.{DevGeneratorConfig.ID.ToUpper()}.EFFECT");
 
             public static void Prefix()
             {
                 Debug.Log("Initializing Generator Mod Building");
-                
+
                 Strings.Add($"STRINGS.BUILDINGS.PREFABS.{GeneratorModConfig.ID.ToUpper()}.NAME", name);
                 Strings.Add($"STRINGS.BUILDINGS.PREFABS.{GeneratorModConfig.ID.ToUpper()}.DESC", desc);
                 Strings.Add($"STRINGS.BUILDINGS.PREFABS.{GeneratorModConfig.ID.ToUpper()}.EFFECT", effect);
@@ -28,6 +30,7 @@ namespace FreeEnergyGeneratorMod
             }
         }
 
+        /* TODO debate if this should be gated by research -- as a cheat mod I'm not sure if it makes any sense
         [HarmonyPatch(typeof(Db))]
         [HarmonyPatch("Initialize")]
         public class GeneratedBuildingDbPatch
@@ -41,5 +44,6 @@ namespace FreeEnergyGeneratorMod
                 Database.Techs.TECH_GROUPING["RenewableEnergy"] = techList.ToArray();
             }
         }
+        */
     }
 }
