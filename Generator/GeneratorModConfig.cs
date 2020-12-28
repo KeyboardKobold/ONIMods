@@ -21,7 +21,6 @@ namespace Generator
             buildingDef.AudioCategory = "HollowMetal";
             buildingDef.AudioSize = "large";
             buildingDef.Floodable = false;
-            buildingDef.DebugOnly = true;
             return buildingDef;
         }
 
@@ -32,6 +31,7 @@ namespace Generator
             energyGenerator.ignoreBatteryRefillPercent = true;
             energyGenerator.formula = new EnergyGenerator.Formula();
             energyGenerator.powerDistributionOrder = 9;
+            //energyGenerator.SliderTitleKey
         }
 
         public override void DoPostConfigureComplete(GameObject go) => go.AddOrGetDef<PoweredActiveController.Def>();
