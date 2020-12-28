@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Database;
+﻿using System.Collections.Generic;
 using Harmony;
 using STRINGS;
 
-namespace Generator
+namespace FreeEnergyGeneratorMod
 {
     public class GeneratorModPatches
     {
@@ -26,9 +24,6 @@ namespace Generator
                 Strings.Add($"STRINGS.BUILDINGS.PREFABS.{GeneratorModConfig.ID.ToUpper()}.NAME", name);
                 Strings.Add($"STRINGS.BUILDINGS.PREFABS.{GeneratorModConfig.ID.ToUpper()}.DESC", desc);
                 Strings.Add($"STRINGS.BUILDINGS.PREFABS.{GeneratorModConfig.ID.ToUpper()}.EFFECT", effect);
-                //Strings.Add(NAME.key.String, NAME.text);
-                //Strings.Add(DESC.key.String, DESC.text);
-                //Strings.Add(EFFECT.key.String, EFFECT.text);
                 ModUtil.AddBuildingToPlanScreen("Power", GeneratorModConfig.ID);
             }
         }

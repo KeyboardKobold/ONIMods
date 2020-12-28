@@ -1,7 +1,7 @@
 ﻿using TUNING;
 using UnityEngine;
 
-namespace Generator
+namespace FreeEnergyGeneratorMod
 {
     public class GeneratorModConfig : IBuildingConfig
     {
@@ -26,12 +26,7 @@ namespace Generator
 
         public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
         {
-            EnergyGenerator energyGenerator = go.AddOrGet<EnergyGenerator>();
-            energyGenerator.hasMeter = false;
-            energyGenerator.ignoreBatteryRefillPercent = true;
-            energyGenerator.formula = new EnergyGenerator.Formula();
-            energyGenerator.powerDistributionOrder = 9;
-            //energyGenerator.SliderTitleKey
+            FreeEnergyGenerator energyGenerator = go.AddOrGet<FreeEnergyGenerator>();
         }
 
         public override void DoPostConfigureComplete(GameObject go) => go.AddOrGetDef<PoweredActiveController.Def>();
